@@ -1,0 +1,98 @@
+
+---
+
+## 2. Updated Checklist Templates
+
+Each checklist now references the configuration document to ensure that critical details (like the remote repository URL and current branch name) are always checked before performing operations.
+
+### **Bug Fix Checklist**
+
+**Purpose:** To safely and effectively address a single bug or error.
+
+- **Define Scope:**  
+  - Clearly specify which bug or error is being addressed. *(Limit to one bug per request.)*
+
+- **Branch Management:**  
+  - **Reference `PROJECT_CONFIG.md`:** Verify that you're on the correct branch or create a new branch using the naming convention `bugfix/[brief-description]`.  
+  - If a new branch is needed, update the "Current Working Branch" in `PROJECT_CONFIG.md`.
+
+- **Diagnostic Summary:**  
+  - Ask the AI to list the affected files and functions.
+
+- **Preview Changes:**  
+  - Request a summary or diff of proposed changes before they are applied.
+
+- **Testing:**  
+  - Run tests or manually verify application behavior after applying the fix.
+
+- **Documentation:**  
+  - Update the changelog/README with details about the bug fix.
+
+---
+
+### **Feature Addition Checklist**
+
+**Purpose:** To add new features in a controlled and documented manner.
+
+- **Planning:**  
+  - Briefly outline the new feature and its intended scope.
+
+- **Branch Creation:**  
+  - **Reference `PROJECT_CONFIG.md`:** Create a new branch with an appropriate name (e.g., `feature/new-navbar`) and update the "Current Working Branch" field accordingly.
+
+- **Component/Module Isolation:**  
+  - Specify which part of the project is being modified to isolate changes.
+
+- **Preview Changes:**  
+  - Request a summary or diff of the proposed changes.
+
+- **Testing & Review:**  
+  - Test the new feature thoroughly before merging.
+  - Review the integration of changes with existing code.
+
+- **Documentation:**  
+  - Update any relevant documentation (e.g., README, changelog) with details of the new feature.
+
+---
+
+### **Commit & Push Checklist**
+
+**Purpose:** To ensure that code is properly saved, documented, and integrated without errors.
+
+- **Directory Check:**  
+  - Confirm you’re operating in the project’s root directory.
+
+- **Reference `PROJECT_CONFIG.md`:**  
+  - Verify the remote repository URL and the "Current Working Branch" before proceeding.
+
+- **Review Changes:**  
+  - Run `git status` and `git diff` to inspect pending changes.
+
+- **Incremental Commits:**  
+  - Make small, focused commits with clear, descriptive messages.
+
+- **Branch Confirmation:**  
+  - Double-check that you’re on the correct branch as per `PROJECT_CONFIG.md`.
+
+- **Backup:**  
+  - Optionally, create a backup or stash your changes if making significant modifications.
+
+- **Push & PR Creation:**  
+  - Push your changes to the remote repository:  
+    ```bash
+    git push
+    ```
+  - Open a pull request for review, even if you’re the only developer.
+
+- **Merge Decision:**  
+  - Review if branches should be merged.
+  - Confirm if the branch should be merged into the main branch (or other target branch) after thorough testing and review.
+  - Update or clear the "Current Working Branch" in `PROJECT_CONFIG.md` if the branch is merged.
+
+---
+
+## Final Thoughts
+
+Using these templates, you can explicitly guide your interactions with AI (like Cursor AI) and ensure that every change is made with a consistent process in mind. The dedicated configuration document helps maintain context between sessions, minimizing confusion over branch names, remote URLs, and other key details.
+
+Feel free to adjust any details as you gain more experience with your workflow. Let me know if there’s anything else you’d like to refine or add!
